@@ -1,33 +1,38 @@
 // Three.js setup
 const container = document.getElementById('container');
 const scene = new THREE.Scene();
-scene.fog = new THREE.Fog(0x667eea, 10, 50);
+scene.background = new THREE.Color(0xf5f7fa);
+scene.fog = new THREE.Fog(0xc3cfe2, 20, 70);
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(0, 5, 15);
 
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 container.appendChild(renderer.domElement);
 
 // Lighting
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
 scene.add(ambientLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight.position.set(10, 10, 5);
 directionalLight.castShadow = true;
 scene.add(directionalLight);
 
-const pointLight1 = new THREE.PointLight(0x667eea, 1, 50);
+const pointLight1 = new THREE.PointLight(0x3498db, 0.8, 50);
 pointLight1.position.set(-10, 5, 5);
 scene.add(pointLight1);
 
-const pointLight2 = new THREE.PointLight(0x764ba2, 1, 50);
+const pointLight2 = new THREE.PointLight(0x9b59b6, 0.8, 50);
 pointLight2.position.set(10, 5, -5);
 scene.add(pointLight2);
+
+const rimLight = new THREE.PointLight(0x1abc9c, 0.6, 50);
+rimLight.position.set(0, -5, 10);
+scene.add(rimLight);
 
 // Camera controls
 let isDragging = false;
@@ -202,9 +207,9 @@ function createNodeMesh(keys, x, y, z, isHighlighted = false) {
 
 function createConnectionLine(parent, child) {
     const material = new THREE.LineBasicMaterial({
-        color: 0xffffff,
+        color: 0xd4af37,
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.7,
         linewidth: 2
     });
     
