@@ -2,6 +2,10 @@
 
 A beautiful 3D visualization of B-Tree data structure using Flask, Three.js, and Python.
 
+### Demo
+
+![Demo](demo.gif)
+
 ## Features
 
 - **Insert**: Add keys to the B-Tree with automatic balancing
