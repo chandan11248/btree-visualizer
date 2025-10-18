@@ -207,9 +207,7 @@ Check browser console for errors. Make sure all static files are in the correct 
 - [ ] Bulk insert/delete operations
 - [ ] Tree statistics display
 
-## License
 
-MIT License - Feel free to use and modify!
 
 ## Contributing
 
