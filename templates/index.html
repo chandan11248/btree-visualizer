@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D B-Tree Visualizer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="container"></div>
+    
+    <h1>3D B-Tree Visualizer</h1>
+    
+    <div id="controls">
+        <input type="number" id="keyInput" placeholder="Enter key">
+        <button id="insertBtn" onclick="insertKey()">Insert</button>
+        <button id="deleteBtn" onclick="deleteKey()">Delete</button>
+        <button id="searchBtn" onclick="searchKey()">Search</button>
+        <button id="resetBtn" onclick="resetTree()">Reset</button>
+    </div>
+    
+    <div id="info">🖱️ Drag background to rotate • Drag nodes to move • Scroll to zoom</div>
+    
+    <div id="notification"></div>
+
+    <script src="{{ url_for('static', filename='visualizer.js') }}"></script>
+</body>
+</html>
